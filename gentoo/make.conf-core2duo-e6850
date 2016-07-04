@@ -1,0 +1,52 @@
+# see examples!
+
+CFLAGS="-O2 -pipe -march=core2"
+CXXFLAGS="${CFLAGS}"
+
+SYNC="rsync://rsync9.de.gentoo.org/gentoo-portage"
+
+FEATURES="ccache userfetch"
+CCACHE_SIZE="2G"
+MAKEOPTS="-j2"
+
+PORTDIR_OVERLAY="/usr/local/portage"
+
+PORTAGE_LOGDIR="/var/log/portage/"
+PORTAGE_ELOG_CLASSES="info warn error log qa"
+PORTAGE_ELOG_SYSTEM="save"
+
+PKGDIR="/usr/portage/packages_bin/"
+
+PORTAGE_RSYNC_RETRIES="-1"
+
+VIDEO_CARDS="intel nouveau radeon vesa fbdev virtualbox v4l vesa nvidia"
+INPUT_DEVICES="evdev keyboard mouse void"
+
+USE="mmxext doc ipv6 truetype xinerama vim-syntax xnest opengl dbus qt3support \
+     ffmpeg desktopglobe exif ppp bittorrent lirc scanner gtk thumbnail svg \
+     oscar otr skype v4l winpopup xscreensaver ieee1394 cups floppy lzma \
+     encode flac vorbis samba bluetooth networkmanager jpeg rdesktop plasma \
+     pulseaudio vnc X gd apache2 cgi mysql cups samba gles2 icu embedded \
+     opus java xorg sdl tiff alsa amr cdio cpudetection mp3 openssl \
+     schroedinger sdl ssse3 theora xvid x264 cdda ipod mtp curl gmp xpm zip \
+     sse3 sse4_1 ssse3 libkms a52 bluray sid wma-fixed usb vmware \
+     vmware_guest_freebsd vmware_guest_linux vmware_guest_netware \
+     vmware_guest_solaris vmware_guest_winPre2k vmware_guest_windows \
+     audacious hddtemp iostats math mpd nano-syntax nvidia wifi \
+     nmap-update nping iscsi headless lame sane cups acpi aac midi capi \
+     png mpeg aac mpg123 twolame kde rar wxwidgets ftdi ntfs reiserfs \
+     nfsv41 stars fuse cvs subversion mad googledrive ios dvd musepack \
+     taglib vcd sftp php"
+
+QEMU_SOFTMMU_TARGETS="arm i386 x86_64 m68k mips mips64 mipsel ppc ppc64"
+QEMU_USER_TARGETS="arm i386 x86_64 m68k mips mips64 mipsel ppc ppc64"
+
+SYNC="rsync://rsync9.de.gentoo.org/gentoo-portage"
+GENTOO_MIRRORS="http://ftp.uni-erlangen.de/pub/mirrors/gentoo \
+        	ftp://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/ \
+        	rsync://ftp-stud.hs-esslingen.de/gentoo/ \
+        	http://ftp-stud.hs-esslingen.de/pub/Mirrors/gentoo/"
+
+# we have layman installed, so include it's make.conf
+source /var/lib/layman/make.conf
+

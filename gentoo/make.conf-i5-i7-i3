@@ -1,0 +1,32 @@
+CFLAGS="-march=native -O2 -pipe"
+CXXFLAGS="${CFLAGS}"
+CHOST="x86_64-pc-linux-gnu"
+
+USE="bindist mmx sse sse2 symlink kdrive xnest cryptsetup device-mapper X png \
+     vim-syntax xinerama opengl jpeg tiff gif mp3 -selinux doc cups samba qt4 \
+     valgrind alsa directfb fbcon pulseaudio gtk ssh xfs bluetooth dbus canusb\
+     flac lame mp3 mad libmad java ffmpeg usb cdda fuse mtp otr skype \
+     qt3support aqua dvd mpeg opus taglib v4l vcd x264 xv xvid vorbis encode \
+     gd mysql ssl openssl imagemagick quicktime id3tag"
+
+GRUB_PLATFORMS="coreboot efi-32 efi-64 emu multiboot pc"
+
+QEMU_SOFTMMU_TARGETS="x86_64 arm i386 m68k mips mipsel ppc"
+QEMU_USER_TARGETS="x86_64 arm i386 m68k mips mipsel ppc armeb" 
+
+source /var/lib/layman/make.conf
+PORTDIR_OVERLAY="${PORTDIR_OVERLAY} /usr/local/portage"
+
+PORTDIR="/usr/portage"
+DISTDIR="${PORTDIR}/distfiles"
+PKGDIR="${PORTDIR}/packages"
+
+MAKEOPTS="-j4"
+
+LINGUAS="en"
+
+INPUT_DEVICES="evdev keyboard mouse synaptics joystick"
+VIDEO_CARDS="vesa fbdev intel i915"
+
+PORTAGE_ELOG_SYSTEM="save"
+PORTAGE_ELOG_CLASSES="warn error info log qa"
