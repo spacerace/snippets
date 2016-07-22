@@ -16,3 +16,9 @@ beepoff:
 	and al, 0xfc
 	out 0x61, al
 	ret
+	
+	
+----------------------------------------
+calculate divh/divl from frequency:
+	int div = 1193180/400;	// base/desired frequency
+	printf("divl 0x%02x\ndivh 0x%02x\n", (uint8_t)div, (uint8_t)(div>>8));
