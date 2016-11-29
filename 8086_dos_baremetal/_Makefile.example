@@ -1,0 +1,35 @@
+all:
+	bcc -i -Md -ansi -0 -I -I. -V -W -x -o test.com simple_test.c
+	bcc -i -Md -ansi -A-l -Abdl-test.lst -0 -I -I. -V -W -x -o bdl-test.com tprintf.c main.c bios_dos_lib.c serial.c
+	bcc -i -Md -ansi -0 -I -I. -V -W -x -o pong.com pong.c
+	bcc -i -Md -ansi -0 -I -I. -V -W -x -o datatype.com datatypes.c
+	bcc -A-l -Adumpivt.lst -i -Md -ansi -0 -I -I. -V -W -x -o  dump-ivt.com dump-ivt.c
+	bcc -A-l -Adumpivt.lst -Md -ansi -0 -V -o dosint.com dos-int-handler.c
+	ls -al dosint.com
+	
+test:
+	make dosbox
+	#make copy_to_image
+	#make qemu 
+	
+dosbox:
+	dosbox
+	
+qemu:
+	qemu-system-i386 -m 32 -hda hda_dos622.img -net none -boot c -serial stdio
+	
+copy_to_image:
+	sudo losetup -v -f hda_dos622.img
+	sudo partprobe /dev/loop0
+	sudo mount /dev/loop0p1 dos_c
+
+	sudo cp -v bdl-test.com dos_c
+
+	sudo losetup -a
+	sudo umount -v dos_c
+	sudo losetup -v -D
+
+
+
+	
+	
