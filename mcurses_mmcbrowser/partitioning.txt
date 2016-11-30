@@ -1,0 +1,15 @@
+
+MASTER BOOT RECORD / VOLUME BOOT RECORD
+	446 bytes     bootloader (mbr) / empty (vbr)
+	8   bytes     part0 entry
+	8   bytes     part1 entry
+	8   bytes     part2 entry
+	8   bytes     part3 entry
+	2   bytes     magic number 0x55AA
+
+PARTITION ENTRY
+	1   byte	flag
+	3   bytes	start CHS
+	1   byte        type
+	3   bytes	end CHS
+	4   bytes       start lba
