@@ -1,0 +1,12 @@
+*~
+.*~
+.*swp
+.*cmd
+.tmp_versions
+Module.symvers
+io-port-ex.ko
+io-port-ex.mod.c
+io-port-ex.mod.ko
+io-port-ex.mod.o
+io-port-ex.o
+modules.order

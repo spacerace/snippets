@@ -1,0 +1,457 @@
+00001                                           !BCC_EOS
+00002                                           !BCC_EOS
+00003                                           !BCC_EOS
+00004                                           !BCC_EOS
+00005                                           !BCC_EOS
+00006                                           !BCC_EOS
+00007                                           !BCC_EOS
+00008                                           !BCC_EOS
+00009                                           !BCC_EOS
+00010                                           !BCC_EOS
+00011                                           !BCC_EOS
+00012                                           !BCC_EOS
+00013                                           !BCC_EOS
+00014                                           !BCC_EOS
+00015                                           !BCC_EOS
+00016                                           !BCC_EOS
+00017                                           !BCC_EOS
+00018                                           !BCC_EOS
+00019                                           !BCC_EOS
+00020                                           !BCC_EOS
+00021                                           !BCC_EOS
+00022                                           !BCC_EOS
+00023                                           !BCC_EOS
+00024                                           !BCC_EOS
+00025                                           !BCC_EOS
+00026                                           !BCC_EOS
+00027                                           !BCC_EOS
+00028                                           !BCC_EOS
+00029                                           !BCC_EOS
+00030                                           !BCC_EOS
+00031                                           !BCC_EOS
+00032                                           !BCC_EOS
+00033                                           !BCC_EOS
+00034                                           !BCC_EOS
+00035                                           !BCC_EOS
+00036                                           !BCC_EOS
+00037                                           !BCC_EOS
+00038                                           !BCC_EOS
+00039                                           !BCC_EOS
+00040                                           !BCC_EOS
+00041                                           !BCC_EOS
+00042                                           !BCC_EOS
+00043                                           !BCC_EOS
+00044                                           !BCC_EOS
+00045                                           !BCC_EOS
+00046                                           !BCC_EOS
+00047                                           !BCC_EOS
+00048                                           !BCC_EOS
+00049                                           !BCC_EOS
+00050                                           !BCC_EOS
+00051                                           !BCC_EOS
+00052                                           !BCC_EOS
+00053                                           !BCC_EOS
+00054                                           !BCC_EOS
+00055                                           !BCC_EOS
+00056                                           !BCC_EOS
+00057                                           !BCC_EOS
+00058                                           !BCC_EOS
+00059                                           !BCC_EOS
+00060                                           !BCC_EOS
+00061                                           !BCC_EOS
+00062                                           export	_main
+00063                       00000000>           _main:
+00064                                           !BCC_EOS
+00065 0000           55                         push	bp
+00066 0001           89E5                       mov	bp,sp
+00067 0003           57                         push	di
+00068 0004           56                         push	si
+00069 0005           83C4                   FC  add	sp,*-4
+00070 0008           BB                   012D> mov	bx,#.1
+00071 000B           53                         push	bx
+00072 000C           E8         0000>           call	_printf
+00073 000F           44                         inc	sp
+00074 0010           44                         inc	sp
+00075                                           !BCC_EOS
+00076 0011           B8                   0030  mov	ax,*$30
+00077 0014           A3         0000>           mov	[_count],ax
+00078                                           !BCC_EOS
+00079 0017           BB                   00D2> mov	bx,#_int64h_handler
+00080 001A           53                         push	bx
+00081 001B           E8         019D            call	_get_cs
+00082 001E           50                         push	ax
+00083 001F           BB                   0109> mov	bx,#.2
+00084 0022           53                         push	bx
+00085 0023           E8         0000>           call	_printf
+00086 0026           83C4                   06  add	sp,*6
+00087                                           !BCC_EOS
+00088 0029           BB                   00C6> mov	bx,#.3
+00089 002C           53                         push	bx
+00090 002D           E8         0000>           call	_printf
+00091 0030           44                         inc	sp
+00092 0031           44                         inc	sp
+00093                                           !BCC_EOS
+00094 0032           B8                   0064  mov	ax,*$64
+00095 0035           50                         push	ax
+00096 0036           E8         011F            call	_print_ivt_entry
+00097 0039           44                         inc	sp
+00098 003A           44                         inc	sp
+00099                                           !BCC_EOS
+00100 003B           BB                   00C3> mov	bx,#.4
+00101 003E           53                         push	bx
+00102 003F           E8         0000>           call	_printf
+00103 0042           44                         inc	sp
+00104 0043           44                         inc	sp
+00105                                           !BCC_EOS
+00106 0044           8D5E         F8            lea	bx,-8[bp]
+00107 0047           53                         push	bx
+00108 0048           8D5E         FA            lea	bx,-6[bp]
+00109 004B           53                         push	bx
+00110 004C           B8                   0064  mov	ax,*$64
+00111 004F           50                         push	ax
+00112 0050           E8         00CA            call	_get_ivt_entry
+00113 0053           83C4                   06  add	sp,*6
+00114                                           !BCC_EOS
+00115 0056           BB                   00D2> mov	bx,#_int64h_handler
+00116 0059           53                         push	bx
+00117 005A           E8         015E            call	_get_cs
+00118 005D           50                         push	ax
+00119 005E           B8                   0064  mov	ax,*$64
+00120 0061           50                         push	ax
+00121 0062           E8         0081            call	_install_ivt_entry
+00122 0065           83C4                   06  add	sp,*6
+00123                                           !BCC_EOS
+00124 0068           BB                   009D> mov	bx,#.5
+00125 006B           53                         push	bx
+00126 006C           E8         0000>           call	_printf
+00127 006F           44                         inc	sp
+00128 0070           44                         inc	sp
+00129                                           !BCC_EOS
+00130 0071           B8                   0064  mov	ax,*$64
+00131 0074           50                         push	ax
+00132 0075           E8         00E0            call	_print_ivt_entry
+00133 0078           44                         inc	sp
+00134 0079           44                         inc	sp
+00135                                           !BCC_EOS
+00136 007A           BB                   009A> mov	bx,#.6
+00137 007D           53                         push	bx
+00138 007E           E8         0000>           call	_printf
+00139 0081           44                         inc	sp
+00140 0082           44                         inc	sp
+00141                                           !BCC_EOS
+00142 0083           BB                   0059> mov	bx,#.7
+00143 0086           53                         push	bx
+00144 0087           E8         0000>           call	_printf
+00145 008A           44                         inc	sp
+00146 008B           44                         inc	sp
+00147                                           !BCC_EOS
+00148                                           !BCC_EOS
+00149                                           !BCC_ASM
+00150                       00000000            _main.read_off	set	0
+00151                       FFFFFFF8            .main.read_off	set	-8
+00152                       00000002            _main.read_seg	set	2
+00153                       FFFFFFFA            .main.read_seg	set	-6
+00154 008C           CD                     64  		int #0x64
+00155 008E           CD                     64  		int #0x64
+00156 0090           CD                     64  		int #0x64
+00157 0092           CD                     64  		int #0x64
+00158 0094           CD                     64  		int #0x64
+00159 0096           CD                     64  		int #0x64
+00160 0098           CD                     64  		int #0x64
+00161 009A           CD                     64  		int #0x64
+00162 009C           CD                     64  		int #0x64
+00163 009E           CD                     64  		int #0x64
+00164                                           !BCC_ENDASM
+00165                                           !BCC_EOS
+00166 00A0           BB                   001A> mov	bx,#.8
+00167 00A3           53                         push	bx
+00168 00A4           E8         0000>           call	_printf
+00169 00A7           44                         inc	sp
+00170 00A8           44                         inc	sp
+00171                                           !BCC_EOS
+00172 00A9           FF76         F8            push	-8[bp]
+00173 00AC           FF76         FA            push	-6[bp]
+00174 00AF           B8                   0064  mov	ax,*$64
+00175 00B2           50                         push	ax
+00176 00B3           E8         0030            call	_install_ivt_entry
+00177 00B6           83C4                   06  add	sp,*6
+00178                                           !BCC_EOS
+00179 00B9           BB                   000A> mov	bx,#.9
+00180 00BC           53                         push	bx
+00181 00BD           E8         0000>           call	_printf
+00182 00C0           44                         inc	sp
+00183 00C1           44                         inc	sp
+00184                                           !BCC_EOS
+00185 00C2           B8                   0064  mov	ax,*$64
+00186 00C5           50                         push	ax
+00187 00C6           E8         008F            call	_print_ivt_entry
+00188 00C9           44                         inc	sp
+00189 00CA           44                         inc	sp
+00190                                           !BCC_EOS
+00191 00CB           83C4                   04  add	sp,*4
+00192 00CE           5E                         pop	si
+00193 00CF           5F                         pop	di
+00194 00D0           5D                         pop	bp
+00195 00D1           C3                         ret
+00196                                           ! Register BX used in function main
+00197                                           export	_int64h_handler
+00198                       000000D2>           _int64h_handler:
+00199                                           !BCC_ASM
+00200 00D2           60                         		pusha
+00201                                           
+00202 00D3           A0         0000>           		mov al, _count	; get counter (global static C variable)
+00203 00D6           FF06       0000>           inc _count		; increment counter
+00204                                           
+00205                                           		; print counter
+00206 00DA           B4                     0E  		mov ah, #0x0E	; int function Eh, write char, move cursor
+00207 00DC           B7                     00  		mov bh, #0		; page
+00208 00DE           B9                   0001  		mov cx, #1		; number of chars
+00209 00E1           CD                     10  		int 0x10	
+00210                                           		
+00211 00E3           61                         		popa
+00212 00E4           CF                         		iret
+00213                                           !BCC_ENDASM
+00214 00E5           C3                         ret
+00215                                           export	_install_ivt_entry
+00216                       000000E6>           _install_ivt_entry:
+00217                                           !BCC_EOS
+00218                                           !BCC_EOS
+00219                                           !BCC_EOS
+00220 00E6           55                         push	bp
+00221 00E7           89E5                       mov	bp,sp
+00222 00E9           57                         push	di
+00223 00EA           56                         push	si
+00224 00EB           FF76         06            push	6[bp]
+00225 00EE           8A46         04            mov	al,4[bp]
+00226 00F1           30E4                       xor	ah,ah
+00227 00F3           D1E0                       shl	ax,*1
+00228 00F5           D1E0                       shl	ax,*1
+00229 00F7           40                         inc	ax
+00230 00F8           40                         inc	ax
+00231 00F9           50                         push	ax
+00232 00FA           31C0                       xor	ax,ax
+00233 00FC           50                         push	ax
+00234 00FD           E8         00AC            call	_set_mem
+00235 0100           83C4                   06  add	sp,*6
+00236                                           !BCC_EOS
+00237 0103           FF76         08            push	8[bp]
+00238 0106           8A46         04            mov	al,4[bp]
+00239 0109           30E4                       xor	ah,ah
+00240 010B           D1E0                       shl	ax,*1
+00241 010D           D1E0                       shl	ax,*1
+00242 010F           50                         push	ax
+00243 0110           31C0                       xor	ax,ax
+00244 0112           50                         push	ax
+00245 0113           E8         0096            call	_set_mem
+00246 0116           83C4                   06  add	sp,*6
+00247                                           !BCC_EOS
+00248 0119           5E                         pop	si
+00249 011A           5F                         pop	di
+00250 011B           5D                         pop	bp
+00251 011C           C3                         ret
+00252                                           export	_get_ivt_entry
+00253                       0000011D>           _get_ivt_entry:
+00254                                           !BCC_EOS
+00255                                           !BCC_EOS
+00256                                           !BCC_EOS
+00257 011D           55                         push	bp
+00258 011E           89E5                       mov	bp,sp
+00259 0120           57                         push	di
+00260 0121           56                         push	si
+00261 0122           8A46         04            mov	al,4[bp]
+00262 0125           30E4                       xor	ah,ah
+00263 0127           D1E0                       shl	ax,*1
+00264 0129           D1E0                       shl	ax,*1
+00265 012B           40                         inc	ax
+00266 012C           40                         inc	ax
+00267 012D           50                         push	ax
+00268 012E           31C0                       xor	ax,ax
+00269 0130           50                         push	ax
+00270 0131           E8         006C            call	_get_mem
+00271 0134           83C4                   04  add	sp,*4
+00272 0137           8B5E         06            mov	bx,6[bp]
+00273 013A           8907                       mov	[bx],ax
+00274                                           !BCC_EOS
+00275 013C           8A46         04            mov	al,4[bp]
+00276 013F           30E4                       xor	ah,ah
+00277 0141           D1E0                       shl	ax,*1
+00278 0143           D1E0                       shl	ax,*1
+00279 0145           50                         push	ax
+00280 0146           31C0                       xor	ax,ax
+00281 0148           50                         push	ax
+00282 0149           E8         0054            call	_get_mem
+00283 014C           83C4                   04  add	sp,*4
+00284 014F           8B5E         08            mov	bx,8[bp]
+00285 0152           8907                       mov	[bx],ax
+00286                                           !BCC_EOS
+00287 0154           5E                         pop	si
+00288 0155           5F                         pop	di
+00289 0156           5D                         pop	bp
+00290 0157           C3                         ret
+00291                                           ! Register BX used in function get_ivt_entry
+00292                                           export	_print_ivt_entry
+00293                       00000158>           _print_ivt_entry:
+00294                                           !BCC_EOS
+00295                                           !BCC_EOS
+00296                                           !BCC_EOS
+00297 0158           55                         push	bp
+00298 0159           89E5                       mov	bp,sp
+00299 015B           57                         push	di
+00300 015C           56                         push	si
+00301 015D           83C4                   FC  add	sp,*-4
+00302 0160           8D5E         F8            lea	bx,-8[bp]
+00303 0163           53                         push	bx
+00304 0164           8D5E         FA            lea	bx,-6[bp]
+00305 0167           53                         push	bx
+00306 0168           8A46         04            mov	al,4[bp]
+00307 016B           30E4                       xor	ah,ah
+00308 016D           50                         push	ax
+00309 016E           E8         FFAC            call	_get_ivt_entry
+00310 0171           83C4                   06  add	sp,*6
+00311                                           !BCC_EOS
+00312 0174           FF76         F8            push	-8[bp]
+00313 0177           FF76         FA            push	-6[bp]
+00314 017A           E8         000A            call	_print_addr
+00315 017D           83C4                   04  add	sp,*4
+00316                                           !BCC_EOS
+00317 0180           83C4                   04  add	sp,*4
+00318 0183           5E                         pop	si
+00319 0184           5F                         pop	di
+00320 0185           5D                         pop	bp
+00321 0186           C3                         ret
+00322                                           ! Register BX used in function print_ivt_entry
+00323                                           export	_print_addr
+00324                       00000187>           _print_addr:
+00325                                           !BCC_EOS
+00326                                           !BCC_EOS
+00327 0187           55                         push	bp
+00328 0188           89E5                       mov	bp,sp
+00329 018A           57                         push	di
+00330 018B           56                         push	si
+00331 018C           FF76         06            push	6[bp]
+00332 018F           FF76         04            push	4[bp]
+00333 0192           BB                   0000> mov	bx,#.A
+00334 0195           53                         push	bx
+00335 0196           E8         0000>           call	_printf
+00336 0199           83C4                   06  add	sp,*6
+00337                                           !BCC_EOS
+00338 019C           5E                         pop	si
+00339 019D           5F                         pop	di
+00340 019E           5D                         pop	bp
+00341 019F           C3                         ret
+00342                                           ! Register BX used in function print_addr
+00343                                           export	_get_mem
+00344                       000001A0>           _get_mem:
+00345                                           !BCC_EOS
+00346                                           !BCC_EOS
+00347                                           !BCC_ASM
+00348                       00000002            _get_mem.seg	set	2
+00349                       00000004            _get_mem.off	set	4
+00350 01A0           89E3                       		mov bx, sp
+00351 01A2           8E47         02            		mov es, [bx+2]	; seg
+00352 01A5           8B5F         04            		mov	bx, [bx+4]	; off
+00353 01A8           26                         		seg	es
+00354 01A9           8B07                       		mov	ax, [bx]
+00355                                           	
+00356                                           	
+00357                                           !BCC_ENDASM
+00358 01AB           C3                         ret
+00359                                           export	_set_mem
+00360                       000001AC>           _set_mem:
+00361                                           !BCC_EOS
+00362                                           !BCC_EOS
+00363                                           !BCC_EOS
+00364                                           !BCC_ASM
+00365                       00000002            _set_mem.seg	set	2
+00366                       00000006            _set_mem.data	set	6
+00367                       00000004            _set_mem.off	set	4
+00368 01AC           89E3                       		mov bx, sp
+00369 01AE           8E47         02            		mov es, [bx+2]	; seg
+00370 01B1           8B47         06            		mov ax, [bx+6]	; data
+00371 01B4           8B5F         04            		mov bx, [bx+4]	; off
+00372 01B7           26                         		seg es
+00373 01B8           8907                       		mov [bx], ax
+00374                                           !BCC_ENDASM
+00375 01BA           C3                         ret
+00376                                           export	_get_cs
+00377                       000001BB>           _get_cs:
+00378                                           !BCC_ASM
+00379 01BB           0E                         		push cs
+00380 01BC           58                         		pop ax
+00381                                           !BCC_ENDASM
+00382 01BD           C3                         ret
+00383 0000                                      .data
+00384                       00000000>           .A:
+00385                       00000000>           .B:
+00386 0000                        25            .ascii	"%04x:%04x"
+00387 0009                        00            .byte	0
+00388                       0000000A>           .9:
+00389                       0000000A>           .C:
+00390 000A                        0D            .byte	$D,$A
+00391 000C                        72            .ascii	"restored to: "
+00392 0019                        00            .byte	0
+00393                       0000001A>           .8:
+00394                       0000001A>           .D:
+00395 001A                        0D            .byte	$D,$A,$D,$A
+00396 001E                        6E            .ascii	"now uninstalling IVT entry, restoring ol"
+00397 0046                        64            .ascii	"d ISR address..."
+00398 0056                        0D            .byte	$D,$A
+00399 0058                        00            .byte	0
+00400                       00000059>           .7:
+00401                       00000059>           .E:
+00402 0059                        69            .ascii	"if everything works, you should see \"012"
+00403 0081                        33            .ascii	"3456789\" on next line:"
+00404 0097                        0D            .byte	$D,$A
+00405 0099                        00            .byte	0
+00406                       0000009A>           .6:
+00407                       0000009A>           .F:
+00408 009A                        0D            .byte	$D,$A
+00409 009C                        00            .byte	0
+00410                       0000009D>           .5:
+00411                       0000009D>           .10:
+00412 009D                        69            .ascii	"ivt entry for int 64h after change:  "
+00413 00C2                        00            .byte	0
+00414                       000000C3>           .4:
+00415                       000000C3>           .11:
+00416 00C3                        0D            .byte	$D,$A
+00417 00C5                        00            .byte	0
+00418                       000000C6>           .3:
+00419                       000000C6>           .12:
+00420 00C6                        69            .ascii	"ivt entry for int 64h before change, sav"
+00421 00EE                        69            .ascii	"ing it for later restore: "
+00422 0108                        00            .byte	0
+00423                       00000109>           .2:
+00424                       00000109>           .13:
+00425 0109                        6D            .ascii	"my cs=%04xh, address of ISR=%04xh"
+00426 012A                        0D            .byte	$D,$A
+00427 012C                        00            .byte	0
+00428                       0000012D>           .1:
+00429                       0000012D>           .14:
+00430 012D                        69            .ascii	"interrupt test in C, compiler: bcc/dev86"
+00431 0155                        0D            .byte	$D,$A,$D,$A
+00432 0159                        00            .byte	0
+00433 015A                                      .bss
+00434                       00000002>           _count	lcomm	2
+00435                                           
+00436                                           ! 0 errors detected
+
+Symbols:
+.1                          3 012D R   .10                         3 009D R   
+.11                         3 00C3 R   .12                         3 00C6 R   
+.13                         3 0109 R   .14                         3 012D R   
+.2                          3 0109 R   .3                          3 00C6 R   
+.4                          3 00C3 R   .5                          3 009D R   
+.6                          3 009A R   .7                          3 0059 R   
+.8                          3 001A R   .9                          3 000A R   
+.A                          3 0000 R   .B                          3 0000 R   
+.C                          3 000A R   .D                          3 001A R   
+.E                          3 0059 R   .F                          3 009A R   
+_count                      3 0002 R C _get_cs                     0 01BB R E 
+_get_ivt_entry              0 011D R E _get_mem                    0 01A0 R E 
+_install_ivt_entry          0 00E6 R E _int64h_handler             0 00D2 R E 
+_main                       0 0000 R E _print_addr                 0 0187 R E 
+_print_ivt_entry            0 0158 R E _printf                     F 0000 R I 
+_set_mem                    0 01AC R E 
+
+00000 errors
+00000 warnings
