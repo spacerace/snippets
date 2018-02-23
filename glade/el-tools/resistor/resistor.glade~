@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkWindow" id="window_main">
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">el-tools | resistor</property>
+    <property name="resizable">False</property>
+    <property name="default_width">440</property>
+    <property name="default_height">250</property>
+    <signal name="destroy" handler="handler_window_main_destroy" swapped="no"/>
+    <child>
+      <object class="GtkFixed">
+        <property name="height_request">450</property>
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkImage" id="im_resistor">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="pixbuf">resistor.png</property>
+          </object>
+          <packing>
+            <property name="x">11</property>
+            <property name="y">68</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="buttons_plus">
+            <property name="width_request">80</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkButton" id="button_ring1_plus">
+                <property name="label" translatable="yes">+</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_ring2_plus">
+                <property name="label" translatable="yes">+</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_mul_plus">
+                <property name="label" translatable="yes">+</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_tolerance_plus">
+                <property name="label" translatable="yes">+</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_left">7</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">137</property>
+            <property name="y">22</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="buttons_minus">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkButton" id="button_ring1_minus">
+                <property name="label" translatable="yes">-</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_ring2_minus">
+                <property name="label" translatable="yes">-</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_mul_minus">
+                <property name="label" translatable="yes">-</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button_tolerance_minus">
+                <property name="label" translatable="yes">-</property>
+                <property name="width_request">50</property>
+                <property name="height_request">34</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_left">26</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">137</property>
+            <property name="y">190</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="combo_boxes">
+            <property name="width_request">100</property>
+            <property name="height_request">80</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel" id="label_ring1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Ring 1</property>
+                <attributes>
+                  <attribute name="font-desc" value="Century Schoolbook L Bold 12"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_ring2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Ring 2</property>
+                <attributes>
+                  <attribute name="font-desc" value="Century Schoolbook L Bold 12"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_ring3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_right">13</property>
+                <property name="label" translatable="yes">Multiplikator</property>
+                <attributes>
+                  <attribute name="font-desc" value="Century Schoolbook L Bold 12"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_ring4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Toleranz</property>
+                <attributes>
+                  <attribute name="font-desc" value="Century Schoolbook L Bold 12"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_mul">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">Schwarz</item>
+                  <item id="1" translatable="yes">Braun</item>
+                  <item id="2" translatable="yes">Rot</item>
+                  <item id="3" translatable="yes">Orange</item>
+                  <item id="4" translatable="yes">Gelb</item>
+                  <item id="5" translatable="yes">Gruen</item>
+                  <item id="6" translatable="yes">Blau</item>
+                  <item id="7" translatable="yes">Violett</item>
+                  <item id="8" translatable="yes">Gold</item>
+                  <item id="9" translatable="yes">Silber</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_tolerance">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">Braun</item>
+                  <item id="1" translatable="yes">Rot</item>
+                  <item id="2" translatable="yes">Gruen</item>
+                  <item id="3" translatable="yes">Blau</item>
+                  <item id="4" translatable="yes">Violett</item>
+                  <item id="5" translatable="yes">Grau</item>
+                  <item id="6" translatable="yes">Gold</item>
+                  <item id="7" translatable="yes">Silber</item>
+                  <item id="8" translatable="yes">Kein Ring</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_ring1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">Schwarz</item>
+                  <item id="1" translatable="yes">Braun</item>
+                  <item id="2" translatable="yes">Rot</item>
+                  <item id="3" translatable="yes">Orange</item>
+                  <item id="4" translatable="yes">Gelb</item>
+                  <item id="5" translatable="yes">Gruen</item>
+                  <item id="6" translatable="yes">Blau</item>
+                  <item id="7" translatable="yes">Violett</item>
+                  <item id="8" translatable="yes">Grau</item>
+                  <item id="9" translatable="yes">Weiss</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_ring2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">Schwarz</item>
+                  <item id="1" translatable="yes">Braun</item>
+                  <item id="2" translatable="yes">Rot</item>
+                  <item id="3" translatable="yes">Orange</item>
+                  <item id="4" translatable="yes">Gelb</item>
+                  <item id="5" translatable="yes">Gruen</item>
+                  <item id="6" translatable="yes">Blau</item>
+                  <item id="7" translatable="yes">Violett</item>
+                  <item id="8" translatable="yes">Grau</item>
+                  <item id="9" translatable="yes">Weiss</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">22</property>
+            <property name="y">280</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_value">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Wert Ohm</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean Bold 18"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">300</property>
+            <property name="y">320</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Toleranz</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean Bold 18"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">300</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="ring_values">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkComboBoxText" id="cb_value_ring1">
+                <property name="width_request">50</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">0</item>
+                  <item id="1" translatable="yes">1</item>
+                  <item id="2" translatable="yes">2</item>
+                  <item id="3" translatable="yes">3</item>
+                  <item id="4" translatable="yes">4</item>
+                  <item id="5" translatable="yes">5</item>
+                  <item id="6" translatable="yes">6</item>
+                  <item id="7" translatable="yes">7</item>
+                  <item id="8" translatable="yes">8</item>
+                  <item id="9" translatable="yes">9</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_value_ring2">
+                <property name="width_request">50</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">0</item>
+                  <item id="1" translatable="yes">1</item>
+                  <item id="2" translatable="yes">2</item>
+                  <item id="3" translatable="yes">3</item>
+                  <item id="4" translatable="yes">4</item>
+                  <item id="5" translatable="yes">5</item>
+                  <item id="6" translatable="yes">6</item>
+                  <item id="7" translatable="yes">7</item>
+                  <item id="8" translatable="yes">8</item>
+                  <item id="9" translatable="yes">9</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_value_mul">
+                <property name="width_request">50</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item translatable="yes">1</item>
+                  <item id="0" translatable="yes">10</item>
+                  <item id="1" translatable="yes">100</item>
+                  <item id="2" translatable="yes">1K</item>
+                  <item id="3" translatable="yes">10K</item>
+                  <item id="4" translatable="yes">100K</item>
+                  <item id="5" translatable="yes">1M</item>
+                  <item id="6" translatable="yes">10M</item>
+                  <item id="7" translatable="yes">0.1</item>
+                  <item id="8" translatable="yes">0.01</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBoxText" id="cb_value_tolerance">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="active">0</property>
+                <property name="active_id">0</property>
+                <items>
+                  <item id="0" translatable="yes">1%</item>
+                  <item id="1" translatable="yes">2%</item>
+                  <item id="2" translatable="yes">0.5%</item>
+                  <item id="3" translatable="yes">0.25%</item>
+                  <item id="4" translatable="yes">0.1%</item>
+                  <item id="5" translatable="yes">0.05%</item>
+                  <item id="6" translatable="yes">5%</item>
+                  <item id="7" translatable="yes">10%</item>
+                  <item id="8" translatable="yes">20%</item>
+                </items>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">137</property>
+            <property name="y">224</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

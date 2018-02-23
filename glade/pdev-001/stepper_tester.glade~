@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.20.0 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkAboutDialog" id="about_this_program">
+    <property name="can_focus">False</property>
+    <property name="resizable">False</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="program_name">Simple Parport Stepper Card Tester</property>
+    <property name="version">v0.00</property>
+    <property name="copyright" translatable="yes">(c) 2017 Nils Stec &lt;stecdose@gmail.com&gt;</property>
+    <property name="license" translatable="yes">Do whatever you like. If we meet, don't greet.
+
+(c) 2017 Nils Stec &lt;stecdose@gmail.com&gt;</property>
+    <property name="authors">Nils Stec &lt;stecdose@gmail.com&gt;</property>
+    <property name="documenters">Nils Stec &lt;stecdose@gmail.com&gt;</property>
+    <property name="logo">ta8435h.png</property>
+    <property name="license_type">custom</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+            <property name="baseline_position">top</property>
+            <property name="layout_style">end</property>
+            <child type="center">
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAdjustment" id="adjustment1_motor_speed">
+    <property name="lower">1</property>
+    <property name="upper">200</property>
+    <property name="value">75</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
+  <object class="GtkDialog" id="dialog_connect_failed">
+    <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Error!</property>
+    <property name="window_position">center</property>
+    <property name="default_width">320</property>
+    <property name="default_height">240</property>
+    <property name="type_hint">popup-menu</property>
+    <child internal-child="vbox">
+      <object class="GtkBox">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox">
+            <property name="can_focus">False</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Retry</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton">
+                <property name="label" translatable="yes">Cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFixed">
+            <property name="width_request">320</property>
+            <property name="height_request">240</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Couldn't connect to your parport.
+
+Please check if you got proper
+permissions and/or the selected
+port is existent at all.
+
+Maybe there is another program
+using this port.
+
+If it does not work, please contact
+me at &lt;stecdose@gmail.com&gt;</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 14"/>
+                  <attribute name="scale" value="1"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="x">2</property>
+                <property name="y">13</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child type="center">
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkImage" id="im_btn_mC_rotate_left">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mC_rotate_right">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mC_step_left3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mC_step_right3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mC_stop">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">stop.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mD_rotate_left">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mD_rotate_right">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mD_step_left4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mD_step_right4">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mD_stop">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">stop.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mX_rotate_left">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mX_rotate_right">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mX_step_left">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mX_step_right">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mX_stop">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">stop.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mY_rotate_left">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mY_rotate_right">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mY_step_left1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mY_step_right1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mY_stop">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">stop.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mZ_rotate_left">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mZ_rotate_right">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mZ_step_left2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">backward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mZ_step_right2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">forward.png</property>
+  </object>
+  <object class="GtkImage" id="im_btn_mZ_stop">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="pixbuf">stop.png</property>
+  </object>
+  <object class="GtkWindow" id="window_main">
+    <property name="width_request">400</property>
+    <property name="height_request">438</property>
+    <property name="can_focus">False</property>
+    <property name="title" translatable="yes">Simple Parport Stepper Card Tester</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="icon_name">weather-showers-scattered</property>
+    <property name="gravity">center</property>
+    <signal name="destroy" handler="handler_mainwin_destroy" swapped="no"/>
+    <child>
+      <object class="GtkFixed" id="grid_mainwin">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkMenuBar" id="menubar_mainwin">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkMenuItem" id="menuitem_menu">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Menu</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkSeparatorMenuItem">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="handler_mainwin_destroy" swapped="no"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">_Help</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkImageMenuItem">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="sw_connect">
+            <property name="width_request">90</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <signal name="state-set" handler="handler_btn_connect_state_set" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">142</property>
+            <property name="y">62</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScale" id="adj_motor_speed">
+            <property name="width_request">396</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="adjustment">adjustment1_motor_speed</property>
+            <property name="show_fill_level">True</property>
+            <property name="fill_level">10000</property>
+            <property name="round_digits">1</property>
+            <property name="digits">0</property>
+            <property name="value_pos">right</property>
+            <signal name="value-changed" handler="handler_pps_changed" object="adjustment1_motor_speed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">94</property>
+            <property name="y">358</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="seperator_top_vert">
+            <property name="width_request">485</property>
+            <property name="height_request">1</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+          </object>
+          <packing>
+            <property name="x">3</property>
+            <property name="y">118</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="seperator_top_horiz">
+            <property name="height_request">78</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">254</property>
+            <property name="y">28</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid_leds_d0_to_d7">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_left">2</property>
+            <property name="margin_right">2</property>
+            <property name="margin_top">2</property>
+            <child>
+              <object class="GtkLabel" id="label_D0">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D0</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D1</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D2</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D3</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D4</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D5">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D5</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D6">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D6</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_D7">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">D7</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">7</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d0">
+                <property name="width_request">16</property>
+                <property name="height_request">0</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d1">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d5">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d6">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_d7">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">7</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="y">408</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid_leds_STR_LFD_RST_SEL">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="column_spacing">3</property>
+            <child>
+              <object class="GtkLabel" id="label_STR">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">STR</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_LFD">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">#LFD</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_RST">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">RST</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_SEL">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">#SEL</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_strobe">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_linefeed">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_reset">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkImage" id="im_select">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="pixbuf">led_off.png</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">132</property>
+            <property name="y">410</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="bottom_seperator">
+            <property name="width_request">485</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+          </object>
+          <packing>
+            <property name="x">3</property>
+            <property name="y">398</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_select_parport">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">address</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">34</property>
+            <property name="y">37</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBoxText" id="combobox_sel_parport">
+            <property name="width_request">85</property>
+            <property name="height_request">34</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="active">1</property>
+            <property name="active_id">1</property>
+            <items>
+              <item id="1" translatable="yes">0x378</item>
+              <item id="2" translatable="yes">0x278</item>
+              <item id="3" translatable="yes">0x3BC</item>
+            </items>
+            <signal name="changed" handler="handler_parport_addr_changed" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">21</property>
+            <property name="y">62</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid_motor_control">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="row_spacing">2</property>
+            <property name="column_spacing">3</property>
+            <child>
+              <object class="GtkButton" id="btn_mX_rotate_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mX_rotate_left</property>
+                <signal name="clicked" handler="handler_mX_rotate_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mX_stop">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mX_stop</property>
+                <signal name="clicked" handler="handler_mX_stop" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mX_rotate_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mX_rotate_right</property>
+                <signal name="clicked" handler="handler_mX_rotate_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_mX">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">mX </property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean Bold 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mX_step_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mX_step_left</property>
+                <signal name="clicked" handler="handler_mX_step_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mX_step_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mX_step_right</property>
+                <property name="image_position">right</property>
+                <signal name="clicked" handler="handler_mX_step_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_SPACER">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">           </property>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_mY">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">mY </property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean Bold 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_mZ">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">mZ </property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean Bold 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_mC">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">mC </property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean Bold 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_mD">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">mD </property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean Bold 14"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mY_rotate_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mY_rotate_left</property>
+                <signal name="clicked" handler="handler_mY_rotate_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mZ_rotate_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mZ_rotate_left</property>
+                <signal name="clicked" handler="handler_mZ_rotate_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mC_rotate_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mC_rotate_left</property>
+                <signal name="clicked" handler="handler_mC_rotate_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mD_rotate_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mD_rotate_left</property>
+                <signal name="clicked" handler="handler_mD_rotate_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mY_stop">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mY_stop</property>
+                <signal name="clicked" handler="handler_mY_stop" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mZ_stop">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mZ_stop</property>
+                <signal name="clicked" handler="handler_mZ_stop" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mC_stop">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mC_stop</property>
+                <signal name="clicked" handler="handler_mC_stop" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mD_stop">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mD_stop</property>
+                <signal name="clicked" handler="handler_mD_stop" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mY_rotate_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mY_rotate_right</property>
+                <signal name="clicked" handler="handler_mY_rotate_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mZ_rotate_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mZ_rotate_right</property>
+                <signal name="clicked" handler="handler_mZ_rotate_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mC_rotate_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mC_rotate_right</property>
+                <signal name="clicked" handler="handler_mC_rotate_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mD_rotate_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mD_rotate_right</property>
+                <signal name="clicked" handler="handler_mD_rotate_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mY_step_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mY_step_left1</property>
+                <signal name="clicked" handler="handler_mY_step_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mZ_step_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mZ_step_left2</property>
+                <signal name="clicked" handler="handler_mZ_step_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mC_step_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mC_step_left3</property>
+                <signal name="clicked" handler="handler_mC_step_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mD_step_left">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mD_step_left4</property>
+                <signal name="clicked" handler="handler_mD_step_left" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mY_step_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mY_step_right1</property>
+                <property name="image_position">right</property>
+                <signal name="clicked" handler="handler_mY_step_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mZ_step_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mZ_step_right2</property>
+                <property name="image_position">right</property>
+                <signal name="clicked" handler="handler_mZ_step_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mC_step_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mC_step_right3</property>
+                <property name="image_position">right</property>
+                <signal name="clicked" handler="handler_mC_step_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="btn_mD_step_right">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">im_btn_mD_step_right4</property>
+                <property name="image_position">right</property>
+                <signal name="clicked" handler="handler_mD_step_right" swapped="no"/>
+              </object>
+              <packing>
+                <property name="left_attach">6</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+          </object>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">158</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_rotate">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">rotate</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">64</property>
+            <property name="y">130</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_stepwise">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">stepwise</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean Bold 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">193</property>
+            <property name="y">130</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="sw_spindle_relay">
+            <property name="width_request">90</property>
+            <property name="height_request">28</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <signal name="state-set" handler="handler_btn_spindle_state_set" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">382</property>
+            <property name="y">308</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_spindle_relay">
+            <property name="width_request">63</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">spindle</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">312</property>
+            <property name="y">316</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_motor_pps">
+            <property name="width_request">72</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">motor pps</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">6</property>
+            <property name="y">365</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid_pp_regs">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">pp regs: base=</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">0x00</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">4</property>
+                <property name="label" translatable="yes">ctrl=</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">0x00</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">4</property>
+                <property name="label" translatable="yes">status=</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">0x00</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean 10"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">5</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">238</property>
+            <property name="y">426</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="width_request">485</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+          </object>
+          <packing>
+            <property name="x">3</property>
+            <property name="y">350</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_select_parport1">
+            <property name="width_request">63</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">connect</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean 14"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">155</property>
+            <property name="y">36</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSwitch" id="sw_enablesignal">
+            <property name="width_request">90</property>
+            <property name="height_request">28</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <signal name="state-set" handler="handler_btn_enable_state_set" swapped="no"/>
+          </object>
+          <packing>
+            <property name="x">381</property>
+            <property name="y">262</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label_enablesignal">
+            <property name="width_request">54</property>
+            <property name="height_request">20</property>
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">enable</property>
+            <attributes>
+              <attribute name="font-desc" value="Clean Bold 12"/>
+            </attributes>
+          </object>
+          <packing>
+            <property name="x">310</property>
+            <property name="y">268</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkGrid" id="grid_endswitch_status">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkCheckButton" id="checkbox_endswitch1">
+                <property name="label" translatable="yes">switch1</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="checkbox_endswitch2">
+                <property name="label" translatable="yes">switch2</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label_endswitches">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="margin_left">3</property>
+                <property name="margin_bottom">2</property>
+                <property name="label" translatable="yes">endswitches</property>
+                <attributes>
+                  <attribute name="font-desc" value="Clean Bold 12"/>
+                </attributes>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="x">303</property>
+            <property name="y">156</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
