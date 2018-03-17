@@ -5,4 +5,4 @@ all:
 	
 	
 test:
-	qemu-system-i386 -curses -m 4 -net none -option-rom rom.bin.signed
+	qemu-system-i386 -m 4 -net none -option-rom rom.bin.signed

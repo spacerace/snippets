@@ -104,21 +104,20 @@ rom_init:
 		call print_str
 		call new_line
 		
-		mov dx, 0x378
-		mov al, '#'
-		out dx, al
+	;	mov dx, 0x378
+	;	mov al, '#'
+	;	out dx, al
 
-		mov dx, 0x378
-		mov al, '#'
-		out dx, al
+	;	mov dx, 0x378
+	;	mov al, '#'
+	;	out dx, al
 
-		mov dx, 0x378
-		mov al, '#'
-		out dx, al
-
+	;	mov dx, 0x378
+	;	mov al, '#'
+	;	out dx, al
 		
-		mov ah, 0x00
-		int 0x16
+		;mov ah, 0x00
+		;int 0x16
 		
 		popa
 		retf
