@@ -2,10 +2,15 @@
 #include <string.h>
 #include <dos.h>
 
-int main(int argc, char *argv[]) {
-    char cmd[129];
-    char args[129];
+int system(char *string);
 
+int main(int argc, char *argv[]) {
+    system("dir z:");
+
+    return 0;
+}
+
+int system(char *string) {
     struct SREGS sregs;
     union REGS inregs, outregs;
 
@@ -19,8 +24,18 @@ int main(int argc, char *argv[]) {
         unsigned int fcb2_seg;
     } param_block;
 
-    sprintf(cmd, "argtest.com");
-    sprintf(args, "1234567890 ABCDEF GHI jklmn 123");
+    char cmd[129];
+    char args[129];
+
+    memset(cmd, '\0', sizeof(cmd));
+    memset(args, '\0', sizeof(args));
+
+    strcpy(cmd, "COMMAND.COM");
+
+    args[0] = ' ';          /* WARNING dirty hack, first char of args is always
+                             * lost. We place a dummy to get lost. */
+    strcat(args, "/C ");
+    strcat(args, string);
 
     segread(&sregs);
     sregs.es = sregs.ss;
@@ -38,12 +53,7 @@ int main(int argc, char *argv[]) {
     inregs.x.dx = (unsigned int)cmd;
     inregs.x.bx = (unsigned int)&param_block;
 
-    printf("executing '%s' wit args '%s':\r\n\r\n", cmd, args);
-
     int86x(0x21, &inregs, &outregs, &sregs);
-
-    printf("\r\nint21 returned AX=0x%04x BX=0x%04x CX=0x%04x DX=0x%04x\r\n", outregs.x.ax, outregs.x.bx, outregs.x.cx, outregs.x.dx); 
 
     return 0;
 }
-
