@@ -25,8 +25,6 @@ int main() {
 		int 0x10
 	#endasm
 	puts("hahaha");
-    
-    
 
 }
 
